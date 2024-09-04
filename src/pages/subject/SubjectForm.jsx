@@ -35,6 +35,7 @@ function SubjectForm() {
   }
   return (
     <div className='max-w-[600px] m-auto py-10'>
+      <h1 className='text-center pb-2 text-2xl font-semibold'>Add  Subject</h1>
       <form className='flex flex-col gap-4' onSubmit={formHandler}>
       <CusInput value={formData.subjectName} place="Math" type="text" label="Subject Name" setFormData={(e)=>setFormData({...formData,subjectName:e.target.value})}/>
       <CusInput value={formData.class} place="12" type="number" label="Class" setFormData={(e)=>setFormData({...formData,class:Number(e.target.value)})}/>

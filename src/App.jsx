@@ -3,6 +3,8 @@ import './App.css'
 import CusSidBar from './components/CusSidBar';
 import { Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
+import FeeStructure from './pages/feePages/FeeStructure';
+import FeeVoucher from './pages/feePages/FeeVoucher';
 
 function App() {
 
@@ -27,6 +29,9 @@ function App() {
 
        <Route path='/class-form' element={<ClassForm/>}/>
        <Route path='/class-list' element={<ClassList/>}/>
+
+       <Route path='/fee-structure' element={<FeeStructure/>}/>
+       <Route path='/fee-voucher' element={<FeeVoucher/>}/>
 
        
       </Route>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { LinksData } from "../data/LinksData";
-import { json, NavLink, Outlet } from "react-router-dom";
-import { IoIosArrowUp } from "react-icons/io";
-import Navbar from "./Navbar";
+import { NavLink, Outlet } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../config/Firebase-config";
+import { MdMenu } from "react-icons/md";
+
+
 
 function CusSidBar() {
   let [showLinks, setShowLinks] = useState(null);
@@ -49,12 +50,12 @@ function CusSidBar() {
       >
         <h1
           onClick={() => setOpenSideBar((prev) => !prev)}
-          className="block md:hidden"
+          className="block md:hidden text-white text-2xl font-bold  "
         >
-          Open
+          <MdMenu/>
         </h1>
 
-        <h1 className="text-white  font-bold">Learnig Manangment System</h1>
+        <h1 className="text-white text-sm font-bold">Learnig Manangment System</h1>
         <div className="relative">
           <button
             className="h-[30px] w-[30px] bg-zinc-200 uppercase rounded-full text-lg font-semibold"
@@ -88,7 +89,7 @@ function CusSidBar() {
                 className={`flex justify-between px-3 py-2 items-center w-full mb-1 `}
                 onClick={() => renderLinks(val.label)}
               >
-                <h1 className="text-xl font-semibold flex items-center gap-3 ">
+                <h1 className="text-xl text-zinc-600 font-semibold flex items-center gap-3 ">
                   {val.icons} {val.label}
                 </h1>
                 <h1
@@ -109,8 +110,10 @@ function CusSidBar() {
           ))}
         </div>
 
-        <div className="pt-[50px] w-full md:w-[calc(100%-280px)]  overflow-hidden px-2">
-          <Outlet onClick={menuClose} />
+        <div  
+        onClick={() => setOpenSideBar(false)}
+         className="pt-[50px] h-[100%]  w-full md:w-[calc(100%-280px)]  overflow-hidden px-2"  >
+          <Outlet onClick={menuClose}/>
         </div>
       </div>
     </>
@@ -134,8 +137,8 @@ function PagesLinks({ link, showLinks, label, setOpenSideBar }) {
             onClick={() => setOpenSideBar(false)}
             key={e.name}
             className={({ isActive }) =>
-              ` px-4 capitalize  text-lg w-full inline-block hover:bg-zinc-200 py-2 ${
-                isActive ? " text-pink-600" : ""
+              ` pl-10 capitalize text-zinc-700  text-lg w-full inline-block hover:bg-zinc-200 py-2 ${
+                isActive ? " text-purple-600" : ""
               }`
             }
             to={e.path}

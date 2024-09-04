@@ -98,9 +98,9 @@ const Login= () => {
             </button>
             </div>
           </div>
-          <p className="text-pink-600 hover:text-purple-600 text-sm cursor-pointer text-center hover:underline">
+          {/* <p className="text-pink-600 hover:text-purple-600 text-sm cursor-pointer text-center hover:underline">
             Forgot Password
-          </p>
+          </p> */}
         </div>
 
         <div className="w-full">

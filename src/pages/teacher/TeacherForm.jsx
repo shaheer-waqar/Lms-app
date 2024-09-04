@@ -39,7 +39,7 @@ function TeacherForm() {
   }
   return (
     <div className='max-w-[600px] m-auto py-10'>
-      {/* <FormHeading text="Teacher Registration"/> */}
+      <h1 className='text-center pb-2 text-2xl font-semibold'>Register Teacher</h1>
       <form className='flex flex-col gap-4' onSubmit={formHandler}>
       <CusInput value={formData.firstName} place="John" type="text" label="First Name" setFormData={(e)=>setFormData({...formData,firstName:e.target.value})}/>
       <CusInput value={formData.lastName} place="Denis" type="text" label="Last Name" setFormData={(e)=>setFormData({...formData,lastName:e.target.value})}/>
