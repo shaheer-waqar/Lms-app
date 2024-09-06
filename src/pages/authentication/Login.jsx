@@ -54,7 +54,7 @@ const Login= () => {
 
   return (
     <div className="h-screen font-popins py-20 px-2">
-      <div className="w-full md:max-w-[400px]  border m-auto bg-white px-3 flex flex-col gap-5 py-5 rounded-sm shadow-lg">
+      <div className="max-w-[400px]  border m-auto bg-white px-3 flex flex-col gap-5 py-5 rounded-sm shadow-lg">
         <div>
           <h1 className="text-center mt-10 text-2xl font-bold">Login</h1>
         </div>

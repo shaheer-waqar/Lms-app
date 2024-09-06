@@ -9,7 +9,7 @@ function Home() {
     } else {
       setUserData({});
     }
-  });
+  },[]);
   return (
     <div className="flex flex-col">
       <h1 className="text-2xl text-center py-2 font-semibold">

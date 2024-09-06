@@ -128,10 +128,10 @@ export const LinksData = [
                 name:"Exam  Schedule",
                 path:"/exam-schedule",
             },
-            {
-                name:"Exam  Result",
-                path:"/exam-result",
-            },
+            // {
+            //     name:"Exam  Result",
+            //     path:"/exam-result",
+            // },
         ],
     },
 

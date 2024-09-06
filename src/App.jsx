@@ -7,6 +7,7 @@ import FeeStructure from './pages/feePages/FeeStructure';
 import FeeVoucher from './pages/feePages/FeeVoucher';
 import ExamSchedule from './pages/Exam/ExamSchedule';
 import AuthProtected from './pages/authentication/AuthProtected';
+import FeeSubmission from './pages/feePages/FeeSubmission';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
 
        <Route path='/exam-schedule' element={<ExamSchedule/>}/>
        <Route path='/fee-voucher' element={<FeeVoucher/>}/>
+       <Route path='/fee-submission' element={<FeeSubmission/>}/>
        
       </Route>
       <Route element={<AuthProtected/>}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { LinksData } from "../data/LinksData";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../config/Firebase-config";
 import { MdMenu } from "react-icons/md";
@@ -12,6 +12,7 @@ function CusSidBar() {
   let [showLinks, setShowLinks] = useState(null);
   let [menu, setMenu] = useState(false);
   let [user,setUser] = useState(null);
+  let navigate = useNavigate();
 
   const renderLinks = (label) => {
     if (showLinks == label) {
@@ -31,6 +32,9 @@ function CusSidBar() {
   const Logout = async () => {
     try {
       await signOut(auth);
+      localStorage.clear();
+      navigate("/login")
+
     } catch (error) {
       console.log(error);
     }
@@ -52,7 +56,7 @@ function CusSidBar() {
 
         <h1
           onClick={() => setOpenSideBar((prev) => !prev)}
-          className="block md:hidden text-white text-2xl font-bold  "
+          className="block md:hidden  text-2xl font-bold  "
         >
           <MdMenu/>
         </h1>
