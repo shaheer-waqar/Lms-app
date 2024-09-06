@@ -46,8 +46,10 @@ function CusSidBar() {
     <>
       <div
         onClick={menuClose}
-        className="bg-pink-600 h-[50px] px-3 flex items-center justify-between  fixed z-[150] w-full nav"
+        className="flex justify-end  fixed z-[150] w-full nav"
       >
+        <div className="flex w-full md:w-[calc(100%-280px)]  bg-white shadow-lg h-[50px] justify-between px-3 items-center">
+
         <h1
           onClick={() => setOpenSideBar((prev) => !prev)}
           className="block md:hidden text-white text-2xl font-bold  "
@@ -55,7 +57,7 @@ function CusSidBar() {
           <MdMenu/>
         </h1>
 
-        <h1 className="text-white text-sm font-bold">Learnig Manangment System</h1>
+        <h1 className="text-sm font-bold">Learnig Manangment System</h1>
         <div className="relative">
           <button
             className="h-[30px] w-[30px] bg-zinc-200 uppercase rounded-full text-lg font-semibold"
@@ -67,29 +69,30 @@ function CusSidBar() {
           </button>
           <button
             onClick={Logout}
-            className={`absolute right-0 top-8  bg-white w-auto px-1 py-1 rounded-md shadow-lg ${
+            className={`absolute right-0 top-8  bg-white w-auto px-2 py-2  rounded-md shadow-xl ${
               menu ? "block" : "hidden"
             }`}
           >
             Logout
           </button>
         </div>
+        </div>
       </div>
 
       <div onClick={menuClose} className="flex justify-end">
         <div
-          className={`w-full max-w-[280px] bg-[#fffffffb] z-[149] no-scrollbar overflow-scroll h-screen flex flex-col gap-0 pt-[50px] shadow-xl
+          className={`w-full max-w-[280px] bg-[#304156] z-[200] no-scrollbar overflow-scroll h-screen pt- flex flex-col gap-0 shadow-xl
           fixed  md:left-0  transition-all duration-300 ${
             openSideBar ? "left-0" : "left-[-300px]"
           }`}
         >
           {LinksData.map((val, index) => (
-            <div key={val.label} className={`hover:bg-zinc-100  `}>
+            <div key={val.label} className={`hover:bg-[#263445]`}>
               <button
-                className={`flex justify-between px-3 py-2 items-center w-full mb-1 `}
+                className={`flex justify-between px-3 py-2 text-white items-center w-full mb-1 `}
                 onClick={() => renderLinks(val.label)}
               >
-                <h1 className="text-xl text-zinc-600 font-semibold flex items-center gap-3 ">
+                <h1 className="text-xl text-white font-semibold flex items-center gap-3 ">
                   {val.icons} {val.label}
                 </h1>
                 <h1
@@ -137,8 +140,8 @@ function PagesLinks({ link, showLinks, label, setOpenSideBar }) {
             onClick={() => setOpenSideBar(false)}
             key={e.name}
             className={({ isActive }) =>
-              ` pl-10 capitalize text-zinc-700  text-lg w-full inline-block hover:bg-zinc-200 py-2 ${
-                isActive ? "text-pink-500" : " text-black"
+              ` pl-10 capitalize text-lg w-full inline-block hover:bg-[#001528]  py-2 ${
+                isActive ? "text-blue-500" : " text-white"
               }`
             }
             to={e.path}

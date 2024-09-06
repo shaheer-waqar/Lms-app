@@ -6,6 +6,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import FeeStructure from './pages/feePages/FeeStructure';
 import FeeVoucher from './pages/feePages/FeeVoucher';
 import ExamSchedule from './pages/Exam/ExamSchedule';
+import AuthProtected from './pages/authentication/AuthProtected';
 
 function App() {
 
@@ -38,8 +39,10 @@ function App() {
        <Route path='/fee-voucher' element={<FeeVoucher/>}/>
        
       </Route>
+      <Route element={<AuthProtected/>}>
        <Route path='/sign-up' element={<SignUp/>}/>
        <Route path='/login' element={<Login/>}/>
+      </Route>
        <Route path="*" element={<PageNotFound/>}/>
     </Routes>
     </>

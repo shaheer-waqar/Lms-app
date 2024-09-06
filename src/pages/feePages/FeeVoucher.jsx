@@ -23,7 +23,7 @@ function FeeVoucher() {
                       <p>Rs:{value.yearlyfee}</p>
                     </div>
                     <div className='flex justify-center'>
-                        <button className='px-2 py-1 border-2 border-pink-600 hover:bg-pink-600 hover:text-white transition-all duration-300'>Pay now </button>
+                        <button className='px-2 py-1 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300'>Pay now </button>
                     </div>
                   </div>
                 )

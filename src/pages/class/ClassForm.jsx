@@ -58,7 +58,7 @@ function ClassForm() {
       <CusRadio value={formData.gender}  label="Male" name='gender' setFormData={(e)=>setFormData({...formData,gender:e.target.value})}/>  
       <CusRadio value={formData.gender} label="Female" name='gender' setFormData={(e)=>setFormData({...formData,gender:e.target.value})}/>  
       </div>  
-      <button disabled={buttonDisable}  className={`text-white py-1 rounded-sm ${!buttonDisable ? "bg-pink-600":"bg-pink-200 cursor-not-allowed"}`}>Sumbit</button>
+      <button disabled={buttonDisable}  className={`text-white py-1 rounded-sm ${!buttonDisable ? "bg-blue-600":"bg-blue-200 cursor-not-allowed"}`}>Sumbit</button>
       </form>
     </div>
   )

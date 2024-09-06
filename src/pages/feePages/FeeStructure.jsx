@@ -10,7 +10,7 @@ function FeeStructure() {
                 return(
                     <div key={value.class} className=' px-6 py-2   shadow-[0_5px_20px_-10px_rgba(0,0,0,0.3)] border-2 rounded-lg '>
                     <h1 className='font-semibold text-center'>Class:{value.class}</h1>  
-                    <div className='flex justify-between text-pink-600'>
+                    <div className='flex justify-between text-blue-600'>
                       <p className='text-lg'>Monthly fee</p>
                       <p>Rs:{value.monthlyfee}</p>
                     </div>

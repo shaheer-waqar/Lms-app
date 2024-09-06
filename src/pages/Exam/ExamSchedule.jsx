@@ -23,7 +23,7 @@ function ExamSchedule() {
                   Start Time: {value.starttime} | End Time: {value.endtime}
                 </p>
                 <div className="mt-2">
-                  <button className="px-2 py-1 border-2 border-pink-600 hover:bg-pink-600 hover:text-white transition-all duration-300">
+                  <button className="px-2 py-1 border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
                     Veiw Details now{" "}
                   </button>
                 </div>

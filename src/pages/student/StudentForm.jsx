@@ -102,7 +102,7 @@ function StudentForm() {
           disabled={buttonDisable}
           value={formData.firstName}
           className={`text-white py-1 rounded-sm ${
-            buttonDisable ? "bg-pink-300 cursor-not-allowed " : "bg-pink-600"
+            buttonDisable ? "bg-blue-300 cursor-not-allowed " : "bg-blue-600"
           }`}
         >
           Sumbit
