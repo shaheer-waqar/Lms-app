@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
 import FeeStructure from './pages/feePages/FeeStructure';
 import FeeVoucher from './pages/feePages/FeeVoucher';
+import ExamSchedule from './pages/Exam/ExamSchedule';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
        <Route path='/fee-structure' element={<FeeStructure/>}/>
        <Route path='/fee-voucher' element={<FeeVoucher/>}/>
 
+       <Route path='/exam-schedule' element={<ExamSchedule/>}/>
+       <Route path='/fee-voucher' element={<FeeVoucher/>}/>
        
       </Route>
        <Route path='/sign-up' element={<SignUp/>}/>

@@ -4,8 +4,11 @@ import CusInput from "../../components/CusInput";
 import CusRadio from "../../components/CusRadio";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/Firebase-config";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function StudentForm() {
+  let navigate=useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,11 +20,11 @@ function StudentForm() {
   const formHandler = async (e) => {
     e.preventDefault();
     setButtonDisable(true);
-
+    
     try {
       const docRef = await addDoc(collection(db, "students"), formData);
-      console.log("added");
       setButtonDisable(false);
+      console.log("added");
       setFormData({
         firstName: "",
         lastName: "",
@@ -29,6 +32,9 @@ function StudentForm() {
         class: "",
         gender: "",
       });
+      toast.success("added");
+      navigate("/student-list");
+
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -95,8 +101,8 @@ function StudentForm() {
         <button
           disabled={buttonDisable}
           value={formData.firstName}
-          className={`bg-pink-600  text-white py-1 rounded-sm ${
-            buttonDisable ? "bg-pink-200" : ""
+          className={`text-white py-1 rounded-sm ${
+            buttonDisable ? "bg-pink-300 cursor-not-allowed " : "bg-pink-600"
           }`}
         >
           Sumbit

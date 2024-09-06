@@ -120,5 +120,19 @@ export const LinksData = [
             },
         ],
     },
+    {
+        label:"Exam",
+        icons:<PiStudentFill/>,
+        links:[
+            {
+                name:"Exam  Schedule",
+                path:"/exam-schedule",
+            },
+            {
+                name:"Exam  Result",
+                path:"/exam-result",
+            },
+        ],
+    },
 
 ]

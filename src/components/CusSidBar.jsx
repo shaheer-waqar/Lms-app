@@ -138,7 +138,7 @@ function PagesLinks({ link, showLinks, label, setOpenSideBar }) {
             key={e.name}
             className={({ isActive }) =>
               ` pl-10 capitalize text-zinc-700  text-lg w-full inline-block hover:bg-zinc-200 py-2 ${
-                isActive ? " text-purple-600" : ""
+                isActive ? "text-pink-500" : " text-black"
               }`
             }
             to={e.path}

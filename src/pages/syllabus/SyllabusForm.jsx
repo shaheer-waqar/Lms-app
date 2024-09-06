@@ -5,6 +5,7 @@ import { addDoc, collection } from "firebase/firestore";
 import CusInput from "../../components/CusInput";
 import CusFile from "../../components/CusFile";
 import { ref, uploadBytes } from "firebase/storage";
+import { toast } from "react-toastify";
 
 function SyllabusForm() {
   const [formData, setFormData] = useState({
@@ -24,6 +25,7 @@ function SyllabusForm() {
       return alert("chose file please");
     setButtonDisable(true);
 
+
     try {
       const storageRef = ref(storage, `images/${formData.file}`);
 
@@ -35,13 +37,15 @@ function SyllabusForm() {
       });
       console.log("added");
       setButtonDisable(false);
-      navigate("/subjects-list");
       setFormData({
         subjectName: "",
         class: "",
         file: "No File Chosen",
       });
+      toast.success("added");
+      navigate("/syllabus-list")
     } catch (e) {
+      setButtonDisable(false);
       console.error("Error adding document: ", e);
     }
   };
@@ -76,8 +80,8 @@ function SyllabusForm() {
         ></CusFile>
         <button
           disabled={buttonDisable}
-          className={`bg-pink-600 text-white py-1 rounded-sm ${
-            buttonDisable ? "bg-pink-200" : ""
+          className={`text-white py-1 rounded-sm ${
+            buttonDisable ? "bg-pink-300 cursor-not-allowed " : "bg-pink-600"
           }`}
         >
           Sumbit

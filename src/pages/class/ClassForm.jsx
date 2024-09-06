@@ -3,9 +3,12 @@ import CusInput from '../../components/CusInput';
 import CusRadio from '../../components/CusRadio';
 import { collection, addDoc } from "firebase/firestore"; 
 import { db } from '../../config/Firebase-config';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 function ClassForm() {
+  let navigate = useNavigate();
   const [formData,setFormData] = useState({
     firstName:"",
     lastName:"",
@@ -24,7 +27,7 @@ function ClassForm() {
       const docRef = await addDoc(collection(db, "class"),formData);
       console.log("added",);
       setButtonDisable(false);
-     setFormData({
+      setFormData({
         firstName:"",
         lastName:"",
         fatherName:"",
@@ -33,7 +36,10 @@ function ClassForm() {
         gender:"",
         date:"",
       });
+      toast.success("added")
+      navigate("/teacher-list")
     } catch (e) {
+      setButtonDisable(false);
       console.error("Error adding document: ", e);
     }
   }
@@ -52,7 +58,7 @@ function ClassForm() {
       <CusRadio value={formData.gender}  label="Male" name='gender' setFormData={(e)=>setFormData({...formData,gender:e.target.value})}/>  
       <CusRadio value={formData.gender} label="Female" name='gender' setFormData={(e)=>setFormData({...formData,gender:e.target.value})}/>  
       </div>  
-      <button disabled={buttonDisable}  className={`bg-gradient-to-r from-pink-600 to-purple-600 text-white py-1 rounded-sm ${buttonDisable ? "bg-pink-600":""}`}>Sumbit</button>
+      <button disabled={buttonDisable}  className={`text-white py-1 rounded-sm ${!buttonDisable ? "bg-pink-600":"bg-pink-200 cursor-not-allowed"}`}>Sumbit</button>
       </form>
     </div>
   )

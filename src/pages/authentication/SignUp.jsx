@@ -4,6 +4,7 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { createUserWithEmailAndPassword, sendEmailVerification, signOut } from "firebase/auth";
 import { auth } from "../../config/Firebase-config";
+import { toast } from "react-toastify";
 
 
 function SignUp() {
@@ -23,10 +24,14 @@ function SignUp() {
       await createUserWithEmailAndPassword(auth,formData.email,formData.password);
       localStorage.setItem("user",JSON.stringify(formData));
       await signOut(auth);
+      toast.success("Acount created sucessfully");
+
       
-        navigate("/login");
+     navigate("/login");
     }catch(error){
         console.log(error.message);
+        toast.error(error.message);
+
     }
     
   }

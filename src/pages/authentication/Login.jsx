@@ -5,6 +5,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import { signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,} from 'firebase/auth';
 import { FcGoogle } from "react-icons/fc";
 import { auth } from '../../config/Firebase-config';
+import { toast } from 'react-toastify';
 
 
 const Login= () => {
@@ -21,9 +22,13 @@ const Login= () => {
     signInWithEmailAndPassword(auth,formData.email,formData.password)
     .then(res=>{
       console.log(res);
+      toast.success("Login sucessfully");
       navigate("/");
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      toast.error(err.message);
+      // alert(err.message)
+    })
   }
 
 
