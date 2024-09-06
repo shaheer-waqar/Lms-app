@@ -18,7 +18,7 @@ function StudentList() {
       </h1>
       <div className="flex justify-end w-full mb-2">
         <button
-          onClick={() => navigate("/rigister-teacher")}
+          onClick={() => navigate("/register-student")}
           className="border-blue-500 border-2 px-5 font-semibold py-1 hover:bg-blue-600 hover:text-white transition-all duration-500 rounded-[3px]"
         >
           Register

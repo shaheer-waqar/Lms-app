@@ -61,7 +61,7 @@ function CusSidBar() {
           <MdMenu/>
         </h1>
 
-        <h1 className="text-sm font-bold">Learnig Manangment System</h1>
+        <h1 className="text-sm md:text-lg font-bold">Learning management  System</h1>
         <div className="relative">
           <button
             className="h-[30px] w-[30px] bg-zinc-200 uppercase rounded-full text-lg font-semibold"

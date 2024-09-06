@@ -11,6 +11,7 @@ import { doc, setDoc } from "firebase/firestore";
 function SignUp() {
 
   let [showPass,setShowPass] = useState(false);
+  let [disableBtn,setDisableBtn] = useState(false);
   let [formData,setFormData] = useState({
     firstname:"",
     lastName:"",
@@ -21,19 +22,21 @@ function SignUp() {
 
   const sumbitHandler = async (e)=>{
     e.preventDefault();
-      await createUserWithEmailAndPassword(auth,formData.email,formData.password)
-      .then( async res =>{
-        const userId = res.user.uid
-        console.log(res)
-        
-        await setDoc(doc(db,"users",userId),formData);
-        
-        await signOut(auth);
-        toast.success("Acount created sucessfully");
-        navigate("/login");
-      })
-
+    setDisableBtn(true);
+    await createUserWithEmailAndPassword(auth,formData.email,formData.password)
+    .then( async res =>{
+      const userId = res.user.uid
+      console.log(res)
+      
+      await setDoc(doc(db,"users",userId),formData);
+      
+      await signOut(auth);
+      toast.success("Acount created sucessfully");
+      navigate("/login");
+      setDisableBtn(false);
+    })
     .catch(error =>{
+      setDisableBtn(false);
         console.log(error.message);
         toast.error(error.message);
 
@@ -124,7 +127,11 @@ function SignUp() {
         </div>
 
         <div className="w-full">
-          <button className="bg-blue-600 from-pink-600 to-purple-600 w-full py-2 text-white">
+          <button 
+          disabled={disableBtn}
+          className={`${
+            disableBtn ? "bg-blue-200 cursor-not-allowed" : "bg-blue-600"
+          } w-full py-2 text-white font-semibold`}>
             Sign up
           </button>
         </div>

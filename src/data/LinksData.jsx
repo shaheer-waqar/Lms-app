@@ -1,7 +1,9 @@
-import { PiStudentFill } from "react-icons/pi";
+import { PiStudentFill,PiExam } from "react-icons/pi";
 import { GiTeacher,GiNotebook } from "react-icons/gi";
 import { FaSchool } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
+import { SlBookOpen } from "react-icons/sl";
+
 
 
 
@@ -52,7 +54,7 @@ export const LinksData = [
     },
     {
         label:"Syllabus",
-        icons:<PiStudentFill/>,
+        icons:<SlBookOpen/>,
         links:[
             {
                 name:"Syllabus Form",
@@ -122,7 +124,7 @@ export const LinksData = [
     },
     {
         label:"Exam",
-        icons:<PiStudentFill/>,
+        icons:<PiExam/>,
         links:[
             {
                 name:"Exam  Schedule",

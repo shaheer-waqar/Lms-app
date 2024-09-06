@@ -6,7 +6,7 @@ function AuthProtected() {
   return (
     <div className='grid md:grid-cols-2 grid-cols-1'>
         <div className='bg-[#304156] h-screen hidden justify-center items-center text-white md:flex'>
-            <h1 className='text-[4vw] px-10 font-bold leading-[50px] '>Learnig  Managment System</h1>
+            <h1 className='text-[3.5vw] font-poppins px-10 font-bold leading-[50px] uppercase'>Learning  management  System</h1>
         </div>
         <div>
             <Outlet/>
