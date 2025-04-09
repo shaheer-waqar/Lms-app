@@ -7,12 +7,13 @@ import { getStorage} from "firebase/storage";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDafnAhXwUCR_U_I_yWIb37Rp4S8Pt0hho",
-  authDomain: "lms-software-shah.firebaseapp.com",
-  projectId: "lms-software-shah",
-  storageBucket: "lms-software-shah.appspot.com",
-  messagingSenderId: "648715445938",
-  appId: "1:648715445938:web:96d623359e8bbf9c198bab"
+  apiKey: "AIzaSyC68EK3qQEOqoRyaGy3za7eqTJ188GCxmc",
+  authDomain: "project-lms-18ceb.firebaseapp.com",
+  projectId: "project-lms-18ceb",
+  storageBucket: "project-lms-18ceb.firebasestorage.app",
+  messagingSenderId: "322033812931",
+  appId: "1:322033812931:web:2d95d2778c5692422c2976",
+  measurementId: "G-26KEQLL25S"
 };
 
 const app = initializeApp(firebaseConfig);
